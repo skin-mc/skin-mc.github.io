@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft 3D Skin Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+    <h1>3D Skin Viewer</h1>
+    
+    <div class="input-group">
+        <input type="text" id="usernameInput" placeholder="Enter Username (e.g. Notch or .Gamertag)..." autocomplete="off" onkeypress="handleKeyPress(event)" />
+        <select id="editionSelect">
+            <option value="auto">Auto-Detect</option>
+            <option value="java">Java Edition</option>
+            <option value="bedrock">Bedrock (Geyser)</option>
+        </select>
+    </div>
+    
+    <div id="errorMsg" class="error">Skin not found! Check the username and try again.</div>
+    <button class="btn-search" onclick="searchSkin()">Search & View Model</button>
+    
+    <div class="canvas-container">
+        <canvas id="skinCanvas"></canvas>
+    </div>
+    
+    <button class="toggle-btn" onclick="toggleAnimation()">Pause / Play Animation</button>
+    <button id="viewerDownloadBtn" class="btn-download" style="display:none;" onclick="downloadCurrentSkin()">Download Skin PNG</button>
+</div>
+
+<!-- skinview3d bundle -->
+<script src="https://unpkg.com/skinview3d@3.0.1/bundles/skinview3d.bundle.js"></script>
+<!-- Application Logic -->
+<script src="script.js"></script>
+
+</body>
+</html>
